@@ -11,7 +11,16 @@
   justify-content: center;
 }
 
-  
+.esquela-foto {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 100px;
+  margin-bottom: 1rem;
+  border: 4px solid white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
   .esquela-contenido {
     background-color: rgba(255, 255, 255, 0.85);
     padding: 2rem;

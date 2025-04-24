@@ -9,6 +9,7 @@ function EditorEsquela() {
     datos: '',
     pensamiento: '',
     fondo: '',
+    foto: '',
   });
 
   return (
