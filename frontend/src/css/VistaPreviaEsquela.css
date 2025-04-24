@@ -1,0 +1,50 @@
+.esquela-preview {
+  width: 1200px;
+  height: 1200px;
+  background-size: cover;
+  background-position: center;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+  
+  .esquela-contenido {
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 2rem;
+    border-radius: 12px;
+    width: 100%;
+    text-align: center;
+    font-family: 'Georgia', serif;
+  }
+  
+  .esquela-sub {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 0.5rem;
+  }
+  
+  .esquela-nombre {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #222;
+  }
+  
+  .esquela-datos {
+    font-size: 0.95rem;
+    color: #333;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+  
+  .esquela-pensamiento {
+    font-style: italic;
+    color: #0b558e;
+    font-size: 0.85rem;
+    margin-top: 1.5rem;
+  }
+  
