@@ -1,4 +1,5 @@
 import "../css/VistaPreviaEsquela.css";
+import logo from "../assets/logo-preview.png";
 
 function VistaPreviaEsquela({ formData }) {
   const { nombre, datos, pensamiento, fondo } = formData;
@@ -8,10 +9,8 @@ function VistaPreviaEsquela({ formData }) {
       className="esquela-preview"
       style={{ backgroundImage: `url(/assets/fondos/${fondo})` }}
     >
+      <img src={logo} alt="Logo" className="preview-logo" />
       <div className="esquela-contenido">
-        <h3 className="esquela-sub">
-          Lamentamos el sensible fallecimiento de:
-        </h3>
         {formData.foto && (
           <img
             src={formData.foto}
@@ -19,7 +18,9 @@ function VistaPreviaEsquela({ formData }) {
             className="esquela-foto"
           />
         )}
-
+        <h3 className="esquela-sub">
+          Lamentamos el sensible fallecimiento de:
+        </h3>
         <h2 className="esquela-nombre">{nombre}</h2>
         <p className="esquela-datos">{datos}</p>
         {pensamiento && (

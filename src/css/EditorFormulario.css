@@ -23,7 +23,7 @@
     color: #0b558e;
     font-family: Arial, Helvetica, sans-serif;
   }
-  
+
   form input {
     padding: 0.6rem;
     margin-top: 0.3rem;
@@ -31,14 +31,27 @@
     border-radius: 4px;
     background-color: #f1f1f1;
     transition: border-color 0.3s, box-shadow 0.3s;
+    color: #aaa;
   }
+
   input:focus {
     border-color: #0b558e;
     box-shadow: 0 0 0 3px rgba(11, 85, 142, 0.2);
     outline: none;
     background-color: #6383a6;
     font-weight: bold;
+    color: #ccc;
   }
+
+input::placeholder,
+textarea::placeholder {
+  color: #aaa; /* Un gris clarito */
+}
+
+input:focus::placeholder,
+textarea:focus::placeholder {
+  color: #ccc; /* Aún más clarito al hacer focus */
+}
 
   input:not(:placeholder-shown) {
     background-color: #f5faff; /* o el color que quieras */
@@ -55,6 +68,8 @@
     background-color: #f1f1f1;
     transition: border-color 0.3s, box-shadow 0.3s;
     font-family: Arial, Helvetica, sans-serif;
+    resize: none; /* <-- nuevo */
+    height: 150px; /* <-- opcional, si quieres dar un alto concreto */
   }
   
   textarea:focus {
@@ -105,7 +120,7 @@
     font-weight: bold;
   }
 
-  form button {
+  form button, .btn-guardar {
     margin-top: 1.5rem;
     padding: 0.8rem;
     background-color: #0b558e;
@@ -115,6 +130,7 @@
     cursor: pointer;
     font-weight: bold;
   }
+  
 
   .campo-flex {
     display: flex;
@@ -123,28 +139,26 @@
   }
   
   .btn-cargarFoto {
-    padding: 0.6rem 1.2rem;
-    background-color: #ece87b;
+    padding: 0rem 3rem;
+    background-color:#0b558e;
     border: none;
     border-radius: 30px;
     font-weight: bold;
     cursor: pointer;
-    height: 42px; /* igualá a la altura del select */
+    height: 40px; /* igualá a la altura del select */
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    color: #cdd6e0;
+  }
+
+  .nombre-archivo {
+    margin-left: 1rem;
+    font-size: 0.8rem;
+    color:#aaa;
+    font-style: italic;
+    align-self: center;
   }
   
-  
-  .btn-guardar {
-    margin-top: 1.5rem;
-    background-color: #0b558e;
-    color: white;
-    padding: 0.8rem;
-    border: none;
-    border-radius: 30px;
-    font-weight: bold;
-    cursor: pointer;
-  }
   

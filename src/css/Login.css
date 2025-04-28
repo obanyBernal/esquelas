@@ -60,6 +60,16 @@
     font-weight: bold;
   }
 
+input::placeholder,
+textarea::placeholder {
+  color: #aaa; /* Un gris clarito */
+}
+
+input:focus::placeholder,
+textarea:focus::placeholder {
+  color: #ccc; /* Aún más clarito al hacer focus */
+}
+
   input:not(:placeholder-shown) {
     background-color: #f5faff; /* o el color que quieras */
     border-color: #0b558e;

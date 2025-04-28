@@ -1,27 +1,29 @@
 .editor-container {
-    display: flex;
-    min-height: 100vh;
-    width: 100vw;
-    height: 100vh;
-  }
-  
-  .editor-form {
-    width: 50%;
-    padding: 2rem 3rem;
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
-  
-  .editor-preview {
-    width: 50%;
-    padding: 2rem;
-    background: linear-gradient(to bottom, #e8f1f8, #b1c8e9);
-    display: flex;
-    justify-content: center;
-    align-items: start; /* o center si querés todo centrado */
-    overflow: auto;
-  }
-  
-  
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  width: 100%;
+}
+
+.editor-form {
+  width: 50%;
+  max-width: 700px;
+  padding: 2rem 3rem;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.editor-preview {
+  width: 100%;
+  background: linear-gradient(to bottom, #e8f1f8, #b1c8e9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  box-sizing: border-box;
+}

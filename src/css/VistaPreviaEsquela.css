@@ -1,17 +1,30 @@
+/* Para vista visual solamente */
 .esquela-preview {
   width: 1200px;
   height: 1200px;
+  background: linear-gradient(to bottom, #e8f1f8, #b1c8e9);
   background-size: cover;
   background-position: center;
-  position: relative;
-  margin: auto;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transform: scale(0.60);
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   overflow: hidden;
+  box-sizing: border-box;
+  position: relative;
 }
 
-
+.preview-logo {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100px; /* o ajustable según tu estilo */
+  z-index: 2;
+}
 
 .esquela-foto {
   width: 200px;
@@ -22,52 +35,58 @@
   border: 4px solid white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
+
 .esquela-contenido {
-  background-color: rgba(255, 255, 255, 0.85);
-  padding: 2rem;
-  border-radius: 12px;
-  font-family: 'Georgia', serif;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 90%;
+  background-color: rgba(255, 255, 255, 0.75);
+  padding: 3rem;
+  border-radius: 30px;
+  font-family: 'Georgia', serif;
+  width: 80%;
   text-align: center;
-  color: #000; /* o blanco si el fondo lo requiere */
+  color: #000;
 }
-  
-  .esquela-sub {
-    font-size: 1rem;
-    color: #444;
-    margin-bottom: 0.5rem;
-  }
-  
-  .esquela-nombre {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #222;
-  }
-  
-  .esquela-datos {
-    font-size: 0.95rem;
-    color: #333;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    line-height: 1.5;
-  }
-  
-  .esquela-pensamiento {
-    font-style: italic;
-    color: #0b558e;
-    font-size: 0.85rem;
-    margin-top: 1.5rem;
-  }
 
-  @media (max-width: 1300px) {
-    .esquela-preview {
-      transform: scale(0.5);
-      transform-origin: top left;
-    }
+.esquela-sub {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 0.3rem;
+}
+
+.esquela-nombre {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #222;
+}
+
+.esquela-datos {
+  font-size: 1.50rem;
+  color: #333;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  line-height: 1.7;
+  padding: 2rem;
+}
+
+.esquela-pensamiento {
+  font-style: italic;
+  color: #0b558e;
+  font-size: 1.70rem;
+  margin-top: 1rem;
+
+}
+
+
+@media (max-width: 1200px) {
+  .editor-preview {
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow-x: auto;
   }
-  
-  
+  .esquela-preview {
+    transform: scale(0.25);
+  }
+}
