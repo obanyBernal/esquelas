@@ -3,16 +3,16 @@ import "../css/EditorFormulario.css";
 import logo from "../assets/logo-g.png";
 
 const pensamientosArray = [
-  "1-El cielo se iluminó por la llegada de este hermoso Ángel, siempre guardaremos los mejores recuerdos…. Te extrañaremos.",
-  "2-Cuando la vida te separa de un ser querido el recuerdo de su sonrisa es la mejor manera de seguir adelante. ",
-  "3-Para los que amé y para los que me amaron: Que su tristeza se convierta, en confianza y fe Es solo por un momento que vamos a estar separados. Así que bendigan los recuerdos de su corazón.",
-  "4-Como los rayos del sol iluminan el mundo entero, tus recuerdos, iluminaran nuestros corazones y nuestra mente por el resto de nuestros días.",
-  "5-Tu ausencia ha dejado un inmenso vacío, pero para los que te amamos, no dejaras de existir jamás.",
-  "6-Este es el mensaje que oímos de él y os anunciamos: Que Dios es Luz, y que en él no hay tiniebla alguna. 1.Juan 1:25",
-  "7-No temas, porque yo estoy contigo; no desmayes, porque yo soy tu Dios que te fortalezco; siempre te ayudaré; siempre te sustentaré con la diestra de mi justicia. Isaías 41:10",
-  "8-Aunque pase por quebradas oscuras, no temo ningún mal, porque tú estás conmigo con tu vara y tu bastón, y al verlas voy sin miedo. Salmos 23: 4",
-  "9-Le dijo Jesús: Yo soy la resurrección y la vida; el que cree en mí, aunque esté muerto, vivirá. Y todo aquel que vive y cree en mí, no morirá eternamente. ¿Crees esto? Juan 11:25-26",
-  "10-Si el hombre muere, ¿Puede volver a vivir? Esperare todos los días de mi servicio obligatorio hasta que llegue mi liberación. Tú llamarás y yo responderé. Ansiarás volver a ver la obra de tus manos. Job 14:14-15",
+  "El cielo se iluminó por la llegada de este hermoso Ángel, siempre guardaremos los mejores recuerdos…. Te extrañaremos.",
+  "Cuando la vida te separa de un ser querido el recuerdo de su sonrisa es la mejor manera de seguir adelante. ",
+  "Para los que amé y para los que me amaron: Que su tristeza se convierta, en confianza y fe Es solo por un momento que vamos a estar separados. Así que bendigan los recuerdos de su corazón.",
+  "Como los rayos del sol iluminan el mundo entero, tus recuerdos, iluminaran nuestros corazones y nuestra mente por el resto de nuestros días.",
+  "Tu ausencia ha dejado un inmenso vacío, pero para los que te amamos, no dejaras de existir jamás.",
+  "Este es el mensaje que oímos de él y os anunciamos: Que Dios es Luz, y que en él no hay tiniebla alguna. 1.Juan 1:25",
+  "No temas, porque yo estoy contigo; no desmayes, porque yo soy tu Dios que te fortalezco; siempre te ayudaré; siempre te sustentaré con la diestra de mi justicia. Isaías 41:10",
+  "Aunque pase por quebradas oscuras, no temo ningún mal, porque tú estás conmigo con tu vara y tu bastón, y al verlas voy sin miedo. Salmos 23: 4",
+  "Le dijo Jesús: Yo soy la resurrección y la vida; el que cree en mí, aunque esté muerto, vivirá. Y todo aquel que vive y cree en mí, no morirá eternamente. ¿Crees esto? Juan 11:25-26",
+  "Si el hombre muere, ¿Puede volver a vivir? Esperare todos los días de mi servicio obligatorio hasta que llegue mi liberación. Tú llamarás y yo responderé. Ansiarás volver a ver la obra de tus manos. Job 14:14-15",
 ];
 
 const fondosArray = [
@@ -88,6 +88,40 @@ function EditorFormulario({ formData, setFormData }) {
         value={formData.datos}
         onChange={handleChange}
       />
+      <div className="controladores-texto">
+        <div className="controlador">
+          <label htmlFor="tamanoDatos">Tamaño del texto de los datos:</label>
+          <input
+            id="tamanoDatos"
+            type="range"
+            min="12"
+            max="36"
+            step="1"
+            value={formData.tamanoDatos || 24}
+            onChange={(e) =>
+              setFormData((prev) => ({ ...prev, tamanoDatos: e.target.value }))
+            }
+          />
+        </div>
+
+        <div className="controlador">
+          <label htmlFor="tamanoPensamiento">Tamaño del pensamiento:</label>
+          <input
+            id="tamanoPensamiento"
+            type="range"
+            min="12"
+            max="36"
+            step="1"
+            value={formData.tamanoPensamiento || 18}
+            onChange={(e) =>
+              setFormData((prev) => ({
+                ...prev,
+                tamanoPensamiento: e.target.value,
+              }))
+            }
+          />
+        </div>
+      </div>
 
       <div className="campo-flex">
         <select name="fondo" value={formData.fondo} onChange={handleChange}>
@@ -99,8 +133,13 @@ function EditorFormulario({ formData, setFormData }) {
           ))}
         </select>
 
-        <label htmlFor="file-upload" className="btn-cargarFoto">
-          Cargar Foto
+        <label
+          htmlFor="file-upload"
+          className={`btn-cargarFoto ${
+            formData.foto ? "btn-cargarFoto-cargada" : ""
+          }`}
+        >
+          {formData.foto ? "Foto Cargada" : "Cargar Foto"}
         </label>
         <input
           id="file-upload"
@@ -150,7 +189,9 @@ function EditorFormulario({ formData, setFormData }) {
       ) : (
         <button
           type="button"
-          className="btn-guardar"
+          className={`btn-guardar ${
+            esquelaGuardada ? "btn-guardar-confirmado" : ""
+          }`}
           onClick={handleGuardarComoPNG}
         >
           Guardar como PNG

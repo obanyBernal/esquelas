@@ -44,7 +44,7 @@ function Login() {
             onChange={(e) => setContrasena(e.target.value)}
             required
           />
-          <button type="submit">Ingresar</button>
+          <button type="submit" className='btn-login'>Ingresar</button>
         </form>
       </div>
     </div>

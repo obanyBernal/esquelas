@@ -9,7 +9,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App />} />
+        <Route path="/login" element={<App />} />
         <Route path="/editor" element={<EditorEsquela />} />
       </Routes>
     </BrowserRouter>
