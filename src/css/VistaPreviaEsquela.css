@@ -4,7 +4,22 @@
   align-items: center;
   width: 100%;
   overflow: hidden;
+  position: relative;
+  max-width: 100%;
 }
+
+.esquela-preview-wrapper {
+  transform: scale(0.4);
+  transform-origin: top center;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  max-width: 100%; /* ✅ añade esto para prevenir desbordamiento   */
+}
+
+
+
 .preview-header {
   display: flex;
   justify-content: space-between;
@@ -14,12 +29,13 @@
 }
 
 .btn-cerrar-sesion {
+  position: absolute; /* <-- Antes era relative */
+  top: 20px;
+  right: 20px;
+  z-index: 10;
   background: none;
   border: none;
   color: #f36350;
-  position: relative;
-  top: 220px;
-  left: 520px;
   font-weight: bold;
   cursor: pointer;
   display: flex;
@@ -28,6 +44,7 @@
   font-size: 0.95rem;
   transition: color 0.3s;
 }
+
 
 .btn-cerrar-sesion:hover {
   color: #06385e;
@@ -38,8 +55,8 @@
 .preview-title {
   font-size: 1.2rem;
   font-weight: bold;
+  margin-top: 2rem;
   position: relative; /* 👈 Permite moverlo */
-  top: 200px; /* 👈 Baja 20px */
   margin-bottom: 1rem;
   color: #0b558e;
   font-family: Arial, Helvetica, sans-serif;
@@ -57,7 +74,6 @@
   background-repeat: no-repeat;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  transform: scale(0.60);
   display: flex;
   justify-content: center;
   align-items: center;

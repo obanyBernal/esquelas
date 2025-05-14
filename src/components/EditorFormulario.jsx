@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../css/EditorFormulario.css";
 import logo from "../assets/logo-g.png";
+import html2canvas from "html2canvas";
 
 const pensamientosArray = [
   "El cielo se iluminó por la llegada de este hermoso Ángel, siempre guardaremos los mejores recuerdos…. Te extrañaremos.",
@@ -34,35 +35,33 @@ const fondosArray = [
   { id: 15, nombre: "Fondo 15", imagen: "fondo15.png" },
 ];
 
-function EditorFormulario({ formData, setFormData }) {
-  const [esquelaGuardada, setEsquelaGuardada] = useState(false);
+const descargarEsquela = () => {
+  const elemento = document.querySelector(".esquela-preview");
+  if (elemento) {
+    html2canvas(elemento, {
+      width: 1200,
+      height: 1200,
+      scale: 1,
+      useCORS: true,
+      allowTaint: true,
+    }).then((canvas) => {
+      const link = document.createElement("a");
+      link.download = "esquela.png";
+      link.href = canvas.toDataURL("image/png");
+      link.click();
+    });
+  } else {
+    alert("No se encontró la vista previa para exportar.");
+  }
+};
 
+function EditorFormulario({ formData, setFormData }) {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
       [name]: value,
     }));
-  };
-
-  const handleGuardarComoPNG = () => {
-    const preview = document.querySelector(".esquela-preview");
-
-    if (preview) {
-      import("html2canvas").then(({ default: html2canvas }) => {
-        html2canvas(preview, {
-          scale: 1, // evita que se escale la imagen por DPI
-          useCORS: true, // por si usás imágenes externas
-          allowTaint: true,
-          logging: false,
-        }).then((canvas) => {
-          const link = document.createElement("a");
-          link.download = "esquela.png";
-          link.href = canvas.toDataURL("image/png");
-          link.click();
-        });
-      });
-    }
   };
 
   return (
@@ -177,26 +176,13 @@ function EditorFormulario({ formData, setFormData }) {
           </option>
         ))}
       </select>
-
-      {!esquelaGuardada ? (
-        <button
-          type="button"
-          className="btn-guardar"
-          onClick={() => setEsquelaGuardada(true)}
-        >
-          Guardar Cambios
-        </button>
-      ) : (
-        <button
-          type="button"
-          className={`btn-guardar ${
-            esquelaGuardada ? "btn-guardar-confirmado" : ""
-          }`}
-          onClick={handleGuardarComoPNG}
-        >
-          Guardar como PNG
-        </button>
-      )}
+<button
+  type="button"
+  className="btn-guardar"
+  onClick={descargarEsquela}
+>
+  Descargar Esquela
+</button>
     </form>
   );
 }

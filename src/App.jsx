@@ -1,4 +1,5 @@
 import Login from './components/login';
+import './reset.css';
 
 function App() {
   return (

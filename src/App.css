@@ -1,13 +1,25 @@
+/* App.css — versión neutra para layout de pantalla completa */
 #root {
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  display: flex;
+  flex-direction: row; /* <- cambiar de column a row para permitir editor-container horizontal */
+  max-width: 100vw;
+  overflow: hidden;
 }
 
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;  /* <- Esto es la clave */
+  overflow-x: hidden;
+}
+
+
+/* Puedes mantener esto si usas logos animados */
 .logo {
   height: 6em;
   padding: 1.5em;
-  will-change: filter;
   transition: filter 300ms;
 }
 .logo:hover {
@@ -15,6 +27,11 @@
 }
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
+}
+.editor-container {
+  width: 100vw;
+  max-width: 100vw;
+  overflow: hidden;
 }
 
 @keyframes logo-spin {
@@ -24,18 +41,4 @@
   to {
     transform: rotate(360deg);
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
