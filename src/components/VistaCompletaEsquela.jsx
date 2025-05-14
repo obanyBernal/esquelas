@@ -1,33 +1,25 @@
-import React, { useEffect, useState } from "react";
+// src/components/VistaCompletaEsquela.jsx
+import React from "react";
 import html2canvas from "html2canvas";
-import "../css/VistaPreviaEsquela.css";
 import logo from "../assets/logo-preview.png";
+import "../css/VistaPreviaEsquela.css";
 
-function VistaCompletaEsquela() {
-  const [formData, setFormData] = useState(null);
+function VistaCompletaEsquela({ formData }) {
+  const {
+    nombre,
+    datos,
+    pensamiento,
+    fondo,
+    foto,
+    tamanoDatos,
+    tamanoPensamiento,
+  } = formData;
 
-  useEffect(() => {
-    // Obtenemos los datos desde localStorage al cargar la ventana emergente
-    const data = localStorage.getItem("formDataEsquela");
-    if (data) {
-      try {
-        const parsed = JSON.parse(data);
-        // Si la imagen excede 1MB (~1.3 millones de caracteres en base64), ignórala
-        if (parsed.foto && parsed.foto.length > 1300000) {
-          delete parsed.foto;
-        }
-        setFormData(parsed);
-      } catch (e) {
-        console.error("Error al parsear formDataEsquela:", e);
-      }
-    }
-  }, []);
+  const handleDescargar = () => {
+    const element = document.querySelector(".esquela-preview-full");
+    if (!element) return;
 
-  const handleDescargarPNG = () => {
-    const preview = document.querySelector(".esquela-preview");
-    if (!preview) return;
-
-    html2canvas(preview, {
+    html2canvas(element, {
       width: 1200,
       height: 1200,
       scale: 1,
@@ -41,57 +33,80 @@ function VistaCompletaEsquela() {
     });
   };
 
-  if (!formData) return <p>Cargando vista previa...</p>;
-
-  const { nombre, datos, pensamiento, fondo, tamanoDatos, tamanoPensamiento, foto } = formData;
+  console.log("formData recibido:", formData);
 
   return (
     <div
-      className="esquela-preview"
       style={{
-        backgroundImage: `url(${import.meta.env.BASE_URL}assets/fondos/${fondo})`,
-        transform: "none", // anulamos escala
-        width: "1200px",
-        height: "1200px",
+        textAlign: "center",
+        padding: "2rem",
+        backgroundColor: "#f0f0f0",
       }}
     >
-      <img src={logo} alt="Logo" className="preview-logo" />
-      <div className="esquela-contenido">
-        {foto && (
-          <img
-            src={foto}
-            alt="Foto del difunto"
-            className="esquela-foto"
-          />
-        )}
-        <h3 className="esquela-sub">Lamentamos el sensible fallecimiento de:</h3>
-        <h2 className="esquela-nombre">{nombre}</h2>
-        <p className="esquela-datos" style={{ fontSize: `${tamanoDatos || 24}px`, whiteSpace: "pre-wrap" }}>
-          {datos}
-        </p>
-        {pensamiento && (
-          <blockquote
-            className="esquela-pensamiento"
-            style={{ fontSize: `${tamanoPensamiento || 18}px` }}
+      <div
+        className="esquela-preview esquela-preview-full"
+        style={{
+          position: "relative",
+          width: "1200px",
+          height: "1200px",
+          overflow: "hidden",
+          margin: "0 auto",
+        }}
+      >
+        {/* Fondo como imagen real */}
+        <img
+          src={`${import.meta.env.BASE_URL}assets/fondos/${fondo}`}
+          alt="Fondo"
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            zIndex: 0,
+          }}
+        />
+
+        {/* Contenido principal */}
+        <img src={logo} alt="Logo" className="preview-logo" style={{ zIndex: 2, position: "relative" }} />
+        <div className="esquela-contenido" style={{ position: "relative", zIndex: 2 }}>
+          {foto && <img src={foto} alt="Foto" className="esquela-foto" />}
+          <h3 className="esquela-sub">Lamentamos el sensible fallecimiento de:</h3>
+          <h2 className="esquela-nombre">{nombre}</h2>
+          <p
+            className="esquela-datos"
+            style={{
+              fontSize: `${tamanoDatos || 24}px`,
+              whiteSpace: "pre-wrap",
+            }}
           >
-            “{pensamiento}”
-          </blockquote>
-        )}
+            {datos}
+          </p>
+          {pensamiento && (
+            <blockquote
+              className="esquela-pensamiento"
+              style={{
+                fontSize: `${tamanoPensamiento || 18}px`,
+              }}
+            >
+              “{pensamiento}”
+            </blockquote>
+          )}
+        </div>
       </div>
 
       <button
-        onClick={handleDescargarPNG}
+        onClick={handleDescargar}
         style={{
-          position: "absolute",
-          bottom: "20px",
-          right: "20px",
+          marginTop: "2rem",
           backgroundColor: "#0b558e",
           color: "white",
-          padding: "10px 20px",
-          borderRadius: "10px",
+          padding: "10px 25px",
+          borderRadius: "8px",
+          fontWeight: "bold",
           border: "none",
           cursor: "pointer",
-          fontWeight: "bold",
         }}
       >
         Descargar PNG

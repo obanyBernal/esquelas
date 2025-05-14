@@ -12,26 +12,6 @@ function VistaPreviaEsquela({ formData }) {
     navigate("/login");
   };
 
-  const handleDescargar = () => {
-    const preview = document.querySelector(".esquela-preview");
-
-    if (preview) {
-      html2canvas(preview, {
-        width: 1200,
-        height: 1200,
-        scale: 1,
-        useCORS: true,
-        allowTaint: true,
-        logging: false,
-      }).then((canvas) => {
-        const link = document.createElement("a");
-        link.download = "esquela.png";
-        link.href = canvas.toDataURL("image/png");
-        link.click();
-      });
-    }
-  };
-
   return (
     <div className="preview-wrapper">
       <div className="preview-banner">

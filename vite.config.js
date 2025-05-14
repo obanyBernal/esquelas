@@ -7,10 +7,12 @@ export default defineConfig({
   base: '/system/octo/esquelas/app/',
   plugins: [react()],
   build: {
+    outDir: "dist/system/octo/esquelas/app",
+    emptyOutDir: true,
     rollupOptions: {
       input: {
-        main: resolve(__dirname, "index.html"),
-        vista: resolve(__dirname, "public/vista.html"), // 👈 nueva entrada
+        main: "index.html",
+        vista: "vista.html", 
       },
     },
   },

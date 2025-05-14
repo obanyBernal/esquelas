@@ -35,26 +35,6 @@ const fondosArray = [
   { id: 15, nombre: "Fondo 15", imagen: "fondo15.png" },
 ];
 
-const descargarEsquela = () => {
-  const elemento = document.querySelector(".esquela-preview");
-  if (elemento) {
-    html2canvas(elemento, {
-      width: 1200,
-      height: 1200,
-      scale: 1,
-      useCORS: true,
-      allowTaint: true,
-    }).then((canvas) => {
-      const link = document.createElement("a");
-      link.download = "esquela.png";
-      link.href = canvas.toDataURL("image/png");
-      link.click();
-    });
-  } else {
-    alert("No se encontró la vista previa para exportar.");
-  }
-};
-
 function EditorFormulario({ formData, setFormData }) {
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -176,13 +156,17 @@ function EditorFormulario({ formData, setFormData }) {
           </option>
         ))}
       </select>
-<button
-  type="button"
-  className="btn-guardar"
-  onClick={descargarEsquela}
->
-  Descargar Esquela
-</button>
+      <div>
+        <button
+          onClick={() => {
+            localStorage.setItem("formDataEsquela", JSON.stringify(formData));
+            window.open(`${import.meta.env.BASE_URL}vista.html`, "_blank");
+          }}
+          className="btn-guardar"
+        >
+          Vista Completa y Descargar
+        </button>
+      </div>
     </form>
   );
 }
