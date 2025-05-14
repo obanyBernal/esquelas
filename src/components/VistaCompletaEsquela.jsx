@@ -33,66 +33,140 @@ function VistaCompletaEsquela({ formData }) {
     });
   };
 
-  console.log("formData recibido:", formData);
-
   return (
     <div
       style={{
         textAlign: "center",
         padding: "2rem",
-        backgroundColor: "#f0f0f0",
+        backgroundColor: "#eaeaea",
+        minHeight: "100vh",
       }}
     >
       <div
         className="esquela-preview esquela-preview-full"
         style={{
-          position: "relative",
           width: "1200px",
           height: "1200px",
-          overflow: "hidden",
           margin: "0 auto",
+          position: "relative",
+          /*overflow: "hidden",*/
+          borderRadius: "20px",
+          backgroundColor: "#ffffff",
+          display: "flex", // ✅ Centrado vertical
+          alignItems: "center",
+          justifyContent: "center",
+          overflow: "hidden",
         }}
       >
-        {/* Fondo como imagen real */}
+        {/* Fondo */}
         <img
           src={`${import.meta.env.BASE_URL}assets/fondos/${fondo}`}
           alt="Fondo"
+          className="fondo-esquela"
+          style={{
+            position: "absolute",
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            top: 0,
+            left: 0,
+            zIndex: 0,
+          }}
+        />
+
+        {/* Logo */}
+        <img
+          src={logo}
+          alt="Logo"
+          className="preview-logo"
+          style={{
+            position: "absolute",
+            top: "30px",
+            left: "50%",
+            width: "90px",
+            height: "90px",
+            transform: "translateX(-50%)",
+            zIndex: 2,
+          }}
+        />
+
+        {/* Contenedor que centra el contenido con flex */}
+        <div
           style={{
             position: "absolute",
             top: 0,
             left: 0,
             width: "100%",
             height: "100%",
-            objectFit: "cover",
-            zIndex: 0,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            zIndex: 2,
           }}
-        />
-
-        {/* Contenido principal */}
-        <img src={logo} alt="Logo" className="preview-logo" style={{ zIndex: 2, position: "relative" }} />
-        <div className="esquela-contenido" style={{ position: "relative", zIndex: 2 }}>
-          {foto && <img src={foto} alt="Foto" className="esquela-foto" />}
-          <h3 className="esquela-sub">Lamentamos el sensible fallecimiento de:</h3>
-          <h2 className="esquela-nombre">{nombre}</h2>
-          <p
-            className="esquela-datos"
+        >
+          {/* Contenido blanco */}
+          <div
+            className="esquela-contenido"
             style={{
-              fontSize: `${tamanoDatos || 24}px`,
-              whiteSpace: "pre-wrap",
+              backgroundColor: "rgba(255, 255, 255, 0.8)",
+              borderRadius: "20px",
+              padding: "40px",
+              width: "90%",
+              maxWidth: "1000px",
+              boxSizing: "border-box",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
             }}
           >
-            {datos}
-          </p>
-          {pensamiento && (
-            <blockquote
-              className="esquela-pensamiento"
+            {foto && (
+              <img
+                src={foto}
+                alt="Foto del difunto"
+                className="esquela-foto"
+                style={{
+                  width: "200px",
+                  height: "200px",
+                  objectFit: "cover",
+                  borderRadius: "100px",
+                  marginBottom: "1rem",
+                  border: "4px solid white",
+                  boxShadow: "0 0 10px rgba(0, 0, 0, 0.3)",
+                }}
+              />
+            )}
+
+            <h3 className="esquela-sub">
+              Lamentamos el sensible fallecimiento de:
+            </h3>
+            <h2 className="esquela-nombre">{nombre}</h2>
+
+            <p
+              className="esquela-datos"
               style={{
-                fontSize: `${tamanoPensamiento || 18}px`,
+                fontSize: `${tamanoDatos || 24}px`,
+                whiteSpace: "pre-wrap",
+                margin: "1rem 0",
               }}
             >
-              “{pensamiento}”
-            </blockquote>
-          )}
+              {datos}
+            </p>
+
+            {pensamiento && (
+              <blockquote
+                className="esquela-pensamiento"
+                style={{
+                  fontSize: `${tamanoPensamiento || 18}px`,
+                  fontStyle: "italic",
+                  color: "#0b558e",
+                  marginTop: "2rem",
+                }}
+              >
+                “{pensamiento}”
+              </blockquote>
+            )}
+          </div>
         </div>
       </div>
 
