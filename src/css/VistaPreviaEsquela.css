@@ -2,23 +2,42 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center; /* centra verticalmente el bloque completo */
   width: 100%;
-  overflow: hidden;
+  height: 100%;
   position: relative;
-  max-width: 100%;
 }
-
-.esquela-preview-wrapper {
-  transform: scale(0.4);
-  transform-origin: top center;
-  overflow: hidden;
+.preview-banner {
   width: 100%;
+  background-color: #e8f1f8;
+  padding: 0.5rem 0;
+  border-bottom: 0px solid #ccc;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.preview-center-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  padding-top: 150px;
+}
+.esquela-preview-wrapper {
   display: flex;
   justify-content: center;
-  max-width: 100%; /* ✅ añade esto para prevenir desbordamiento   */
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  height: 100%; /* 👈 Esto es la clave */
+  transform: scale(0.4);
+  transform-origin: center center; /* 👈 Antes era top center */
+  overflow: visible;
+  min-height: 500px; /* ✅ CLAVE: espacio mínimo visual útil */
 }
-
-
 
 .preview-header {
   display: flex;
@@ -29,10 +48,9 @@
 }
 
 .btn-cerrar-sesion {
-  position: absolute; /* <-- Antes era relative */
+  position: absolute;
   top: 20px;
-  right: 20px;
-  z-index: 10;
+  right: 30px;
   background: none;
   border: none;
   color: #f36350;
@@ -43,6 +61,7 @@
   gap: 0.3rem;
   font-size: 0.95rem;
   transition: color 0.3s;
+  z-index: 99;
 }
 
 
@@ -55,9 +74,7 @@
 .preview-title {
   font-size: 1.2rem;
   font-weight: bold;
-  margin-top: 2rem;
-  position: relative; /* 👈 Permite moverlo */
-  margin-bottom: 1rem;
+  margin: 0 0 1rem 0;
   color: #0b558e;
   font-family: Arial, Helvetica, sans-serif;
   letter-spacing: 1px;
@@ -113,6 +130,10 @@
   width: 80%;
   text-align: center;
   color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .esquela-sub {
@@ -154,5 +175,12 @@
   }
   .esquela-preview {
     transform: scale(0.25);
+  }
+}
+
+@media (min-width: 1600px) {
+  .preview-center-box {
+    justify-content: center;
+    padding-top: 0;
   }
 }

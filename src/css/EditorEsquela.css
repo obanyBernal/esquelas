@@ -3,7 +3,6 @@
   height: 100vh;
   overflow: hidden;
   width: 100vw;
-  border: 10px solid red;
 }
 
 .editor-form {
@@ -17,7 +16,6 @@
   height: 100vh;
   overflow-y: auto;
   max-width: 480px;
-  border: 10px solid green;
 }
 
 .editor-preview {
@@ -25,12 +23,14 @@
   height: 100vh;
   background: linear-gradient(to bottom, #e8f1f8, #b1c8e9);
   display: flex;
-  justify-content: center;
+  flex-direction: column; /* 👈 Necesario para apilar título + botón + preview */
   align-items: center;
+  justify-content: center;
   overflow: hidden;
   position: relative;
   box-sizing: border-box;
-  border: 10px solid blue;
+  flex-direction: column;
+  padding: 1rem 0;
 }
 
 
