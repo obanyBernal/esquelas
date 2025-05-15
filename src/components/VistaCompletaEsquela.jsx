@@ -124,20 +124,31 @@ function VistaCompletaEsquela({ formData }) {
             }}
           >
             {foto && (
-              <img
-                src={foto}
-                alt="Foto del difunto"
+              <div
                 style={{
                   width: "200px",
                   height: "200px",
-                  objectFit: "cover", // ✅ Mantiene relación de aspecto
-                  borderRadius: "100px", // ✅ Círculo perfecto
-                  marginBottom: "1rem",
+                  borderRadius: "100px",
+                  overflow: "hidden",
                   border: "4px solid white",
                   boxShadow: "0 0 10px rgba(0, 0, 0, 0.3)",
-                  display: "block",
+                  marginBottom: "1rem",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  flexShrink: 0,
                 }}
-              />
+              >
+                <img
+                  src={foto}
+                  alt="Foto del difunto"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                  }}
+                />
+              </div>
             )}
 
             <h3 className="esquela-sub">
