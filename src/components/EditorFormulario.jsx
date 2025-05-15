@@ -160,7 +160,7 @@ function EditorFormulario({ formData, setFormData }) {
         <button
           onClick={() => {
             localStorage.setItem("formDataEsquela", JSON.stringify(formData));
-            window.open(`${import.meta.env.BASE_URL}vista.html`, "_blank");
+            window.open(`${import.meta.env.BASE_URL}#/vista`, "_blank");
           }}
           className="btn-guardar"
         >
