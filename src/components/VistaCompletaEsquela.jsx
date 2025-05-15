@@ -128,26 +128,25 @@ function VistaCompletaEsquela({ formData }) {
                 style={{
                   width: "200px",
                   height: "200px",
-                  borderRadius: "100px",
-                  overflow: "hidden",
-                  border: "4px solid white",
-                  boxShadow: "0 0 10px rgba(0, 0, 0, 0.3)",
                   marginBottom: "1rem",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  flexShrink: 0,
+                  position: "relative",
+                  zIndex: 5,
                 }}
               >
-                <img
-                  src={foto}
-                  alt="Foto del difunto"
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                  }}
-                />
+                <svg width="200" height="200" style={{ display: "block" }}>
+                  <defs>
+                    <clipPath id="circleView">
+                      <circle cx="100" cy="100" r="100" />
+                    </clipPath>
+                  </defs>
+                  <image
+                    xlinkHref={foto}
+                    width="200"
+                    height="200"
+                    preserveAspectRatio="xMidYMid slice"
+                    clipPath="url(#circleView)"
+                  />
+                </svg>
               </div>
             )}
 
