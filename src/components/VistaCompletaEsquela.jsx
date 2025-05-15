@@ -132,6 +132,7 @@ function VistaCompletaEsquela({ formData }) {
                   width: "200px",
                   height: "200px",
                   objectFit: "cover",
+                  aspectRatio: "1",
                   borderRadius: "100px",
                   marginBottom: "1rem",
                   border: "4px solid white",
