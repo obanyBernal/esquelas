@@ -20,9 +20,10 @@ function VistaCompletaEsquela({ formData }) {
     if (!element) return;
 
     html2canvas(element, {
-      width: 1200,
-      height: 1200,
-      scale: 1,
+      /*width: 1200,*/
+      /*height: 1200,*/
+      /*scale: 1,*/
+      scale: window.devicePixelRatio,
       useCORS: true,
       allowTaint: true,
     }).then((canvas) => {
