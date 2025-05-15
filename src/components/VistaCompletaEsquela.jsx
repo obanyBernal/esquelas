@@ -40,6 +40,8 @@ function VistaCompletaEsquela({ formData }) {
         padding: "2rem",
         backgroundColor: "#eaeaea",
         minHeight: "100vh",
+        height: "100vh",
+        overflowY: "auto",
       }}
     >
       <div
