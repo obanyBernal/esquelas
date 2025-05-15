@@ -12,7 +12,7 @@ dist
 dist-ssr
 *.local
 # Archivos pesados que no deben subirse
-frontend/public/assets/fondos/
++ public/assets/fondos/
 frontend/src/assets/predef/
 
 # Editor directories and files
