@@ -124,21 +124,29 @@ function VistaCompletaEsquela({ formData }) {
             }}
           >
             {foto && (
-              <img
-                src={foto}
-                alt="Foto del difunto"
-                className="esquela-foto"
+              <div
                 style={{
                   width: "200px",
                   height: "200px",
-                  objectFit: "cover",
-                  aspectRatio: "1",
                   borderRadius: "100px",
+                  overflow: "hidden",
                   marginBottom: "1rem",
                   border: "4px solid white",
                   boxShadow: "0 0 10px rgba(0, 0, 0, 0.3)",
+                  position: "relative", // clave para que html2canvas lo pinte bien
                 }}
-              />
+              >
+                <img
+                  src={foto}
+                  alt="Foto del difunto"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    display: "block",
+                  }}
+                />
+              </div>
             )}
 
             <h3 className="esquela-sub">
