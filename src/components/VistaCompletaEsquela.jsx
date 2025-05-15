@@ -146,6 +146,15 @@ function VistaCompletaEsquela({ formData }) {
                     preserveAspectRatio="xMidYMid slice"
                     clipPath="url(#circleView)"
                   />
+                  {/* Borde blanco decorativo */}
+                  <circle
+                    cx="100"
+                    cy="100"
+                    r="97" // un poco menos que 100 para que no se corte
+                    fill="none"
+                    stroke="white"
+                    strokeWidth="6"
+                  />
                 </svg>
               </div>
             )}
