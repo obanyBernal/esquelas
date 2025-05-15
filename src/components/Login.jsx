@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import '../css/login.css';
+import '../css/Login.css';
 import bg from '../assets/bg.png';
 import logo from '../assets/logo-g.png';
 
