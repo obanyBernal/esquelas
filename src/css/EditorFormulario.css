@@ -12,6 +12,15 @@
   margin-bottom: 0.05rem;
 }
 
+.herramientas-title {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #0b558e;
+  margin-bottom: 0.05rem;
+  font-size: large;
+  font-style: italic;
+  margin-top: 2rem;
+}
+
 
 .form-logo {
   height: 50px;
@@ -245,3 +254,34 @@ select:valid {
   font-style: italic;
   align-self: center;
 }
+
+.btn-con-icono {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+  font-size: 0.7rem;
+  width: 8rem;
+  height: 2.5rem;
+  padding: 1%;
+}
+
+.icono-recortar-svg {
+  width: 25px;
+  height: 25px;
+  transition: filter 0.3s ease;
+  filter: brightness(0) invert(90%); /* color inicial: igual al texto (claro sobre fondo azul) */
+}
+
+.btn-con-icono:hover .icono-recortar-svg {
+  filter: brightness(0) saturate(100%) invert(14%) sepia(99%) saturate(400%) hue-rotate(179deg) brightness(95%) contrast(85%);
+  /* Esto simula el azul cuando el fondo se vuelve claro */
+}
+
+.botones-herramientas {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap; /* Se adapta en pantallas pequeñas */
+}
+

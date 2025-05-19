@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "../css/EditorFormulario.css";
 import logo from "../assets/logo-g.png";
 import html2canvas from "html2canvas";
+import recortar from "../assets/recortar.svg";
+import generar from "../assets/generar.svg";
 
 const pensamientosArray = [
   "El cielo se iluminó por la llegada de este hermoso Ángel, siempre guardaremos los mejores recuerdos…. Te extrañaremos.",
@@ -165,6 +167,36 @@ function EditorFormulario({ formData, setFormData }) {
           className="btn-guardar"
         >
           Vista Completa y Descargar
+        </button>
+      </div>
+      <h2 className="herramientas-title">Herramientas</h2>
+      <div className="botones-herramientas">
+        <button
+          className="btn-guardar btn-con-icono"
+          type="button"
+          onClick={() =>
+            window.open(
+              "https://www.adobe.com/es/express/feature/image/crop",
+              "_blank"
+            )
+          }
+        >
+          <img src={recortar} alt="Recortar" className="icono-recortar-svg" />
+          Recortar
+        </button>
+
+        <button
+          className="btn-guardar btn-con-icono"
+          type="button"
+          onClick={() =>
+            window.open(
+              "https://www.fotor.com/es/features/ai-image-extender/",
+              "_blank"
+            )
+          }
+        >
+          <img src={generar} alt="IA Generar" className="icono-recortar-svg" />
+          IA Generar
         </button>
       </div>
     </form>
