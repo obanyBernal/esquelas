@@ -166,10 +166,10 @@ function EditorFormulario({ formData, setFormData }) {
           }}
           className="btn-guardar"
         >
-          Vista Completa y Descargar
+          Vista Previa
         </button>
       </div>
-      <h2 className="herramientas-title">Herramientas</h2>
+      <h2 className="herramientas-title">Herramientas de Inteligencia Artificial</h2>
       <div className="botones-herramientas">
         <button
           className="btn-guardar btn-con-icono"
