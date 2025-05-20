@@ -34,7 +34,7 @@
   max-width: 100%;
   aspect-ratio: 1 / 1;
   height: 100%; /* 👈 Esto es la clave */
-  transform: scale(0.6);
+  transform: scale(0.4);
   transform-origin: center center; /* 👈 Antes era top center */
   overflow: visible;
   min-height: 500px; /* ✅ CLAVE: espacio mínimo visual útil */
