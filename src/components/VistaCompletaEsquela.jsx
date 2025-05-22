@@ -13,6 +13,7 @@ function VistaCompletaEsquela({ formData }) {
     foto,
     tamanoDatos,
     tamanoPensamiento,
+    tamanoNombre,
   } = formData;
 
   const handleDescargar = () => {
@@ -162,7 +163,14 @@ function VistaCompletaEsquela({ formData }) {
             <h3 className="esquela-sub">
               Lamentamos el sensible fallecimiento de:
             </h3>
-            <h2 className="esquela-nombre">{nombre}</h2>
+            <h2
+              className="esquela-nombre"
+              style={{
+                fontSize: `${tamanoNombre || 32}px`,
+              }}
+            >
+              {nombre}
+            </h2>
 
             <p
               className="esquela-datos"

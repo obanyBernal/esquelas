@@ -60,6 +60,24 @@ function EditorFormulario({ formData, setFormData }) {
         value={formData.nombre}
         onChange={handleChange}
       />
+      {/* Nuevo Controlador para el tamaño del nombre */}
+      <div className="controlador">
+        <label htmlFor="tamanoNombre">Tamaño del nombre:</label>
+        <input
+          id="tamanoNombre"
+          type="range"
+          min="18"
+          max="48"
+          step="1"
+          value={formData.tamanoNombre || 32}
+          onChange={(e) =>
+            setFormData((prev) => ({
+              ...prev,
+              tamanoNombre: e.target.value,
+            }))
+          }
+        />
+      </div>
 
       <label>Datos del difunto</label>
       <textarea
@@ -169,7 +187,9 @@ function EditorFormulario({ formData, setFormData }) {
           Vista Previa
         </button>
       </div>
-      <h2 className="herramientas-title">Herramientas de Inteligencia Artificial</h2>
+      <h2 className="herramientas-title">
+        Herramientas de Inteligencia Artificial
+      </h2>
       <div className="botones-herramientas">
         <button
           className="btn-guardar btn-con-icono"

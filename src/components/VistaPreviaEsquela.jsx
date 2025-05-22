@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import html2canvas from "html2canvas";
 
 function VistaPreviaEsquela({ formData }) {
-  const { nombre, datos, pensamiento, fondo } = formData;
+  const { nombre, datos, pensamiento, fondo, tamanoNombre } = formData;
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -49,7 +49,14 @@ function VistaPreviaEsquela({ formData }) {
               <h3 className="esquela-sub">
                 Lamentamos el sensible fallecimiento de:
               </h3>
-              <h2 className="esquela-nombre">{nombre}</h2>
+              <h2
+                className="esquela-nombre"
+                style={{
+                  fontSize: `${tamanoNombre || 32}px`, // Asegúrate de extraerlo de formData
+                }}
+              >
+                {nombre}
+              </h2>
               <p
                 className="esquela-datos"
                 style={{ fontSize: `${formData.tamanoDatos || 24}px` }}
