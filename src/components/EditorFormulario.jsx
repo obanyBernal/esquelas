@@ -196,7 +196,7 @@ function EditorFormulario({ formData, setFormData }) {
           type="button"
           onClick={() =>
             window.open(
-              "https://www.adobe.com/es/express/feature/image/crop",
+              "https://www.iloveimg.com/es/recortar-imagen",
               "_blank"
             )
           }
