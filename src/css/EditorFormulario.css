@@ -159,6 +159,7 @@ select:valid {
 .btn-guardar {
   margin-top: 1.5rem;
   padding: 0.8rem 2rem;
+  margin-right: 1.5rem;
   background-color: #0b558e;
   color: #cdd6e0;
   border: none;
@@ -249,7 +250,7 @@ select:valid {
 
 .nombre-archivo {
   margin-left: 1rem;
-  font-size: 0.8rem;
+  font-size: 0.5rem;
   color: #aaa;
   font-style: italic;
   align-self: center;

@@ -176,15 +176,36 @@ function EditorFormulario({ formData, setFormData }) {
           </option>
         ))}
       </select>
-      <div>
+            <div className="botones-esquela">
         <button
+          className="btn-guardar"
+          type="button"
           onClick={() => {
             localStorage.setItem("formDataEsquela", JSON.stringify(formData));
             window.open(`${import.meta.env.BASE_URL}#/vista`, "_blank");
           }}
-          className="btn-guardar"
         >
           Vista Previa
+        </button>
+
+        <button
+          className="btn-guardar"
+          type="button"
+          onClick={() => {
+            setFormData({
+              nombre: "",
+              datos: "",
+              pensamiento: "",
+              fondo: "",
+              foto: "",
+              tamanoDatos: 24,
+              tamanoPensamiento: 18,
+              tamanoNombre: 32,
+            });
+            localStorage.removeItem("formDataEsquela");
+          }}
+        >
+          Nueva Esquela
         </button>
       </div>
       <h2 className="herramientas-title">
