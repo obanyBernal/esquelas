@@ -170,20 +170,24 @@
 }
 
 
-@media (max-width: 1200px) {
-  .editor-preview {
-    justify-content: flex-start;
-    align-items: flex-start;
-    overflow-x: auto;
-  }
-  .esquela-preview {
+@media (max-width: 768px) {
+  .esquela-preview-wrapper {
     transform: scale(0.25);
+  }
+
+  .preview-logo {
+    height: 60px;
+    top: 10px;
+  }
+
+  .esquela-contenido {
+    padding: 1.5rem;
+    border-radius: 20px;
+  }
+
+  .btn-cerrar-sesion {
+    top: 5px;
+    right: 10px;
   }
 }
 
-@media (min-width: 1600px) {
-  .preview-center-box {
-    justify-content: center;
-    padding-top: 0;
-  }
-}
