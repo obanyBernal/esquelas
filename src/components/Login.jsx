@@ -3,6 +3,7 @@ import { useState } from 'react';
 import '../css/Login.css';
 import bg from '../assets/bg.png';
 import logo from '../assets/logo-g.png';
+import { usuarios } from '../data/usuarios';
 
 function Login() {
   const navigate = useNavigate();
@@ -10,14 +11,35 @@ function Login() {
   const [contrasena, setContrasena] = useState('');
   const [error, setError] = useState('');
 
-  const handleLogin = (e) => {
-    e.preventDefault();
-    if (usuario === 'obany' && contrasena === '12345') {
-      navigate('/editor');
+const handleLogin = async (e) => {
+  e.preventDefault();
+  setError('');
+
+  try {
+    const response = await fetch("https://octoti.com/api-esquelas/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ usuario, contrasena })
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      localStorage.setItem("usuario", JSON.stringify(data));
+      if (data.requiereCambio) {
+        navigate("/cambiar-password");
+      } else {
+        navigate("/editor");
+      }
     } else {
-      setError('Usuario o contraseña incorrectos');
+      setError(data.error || "Error al iniciar sesión");
     }
-  };
+
+  } catch (err) {
+    setError("Error de conexión con el servidor");
+  }
+};
+
 
   return (
     <div className="login-container" style={{ backgroundImage: `url(${bg})` }}>

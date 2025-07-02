@@ -1,0 +1,65 @@
+[
+  {
+    "usuario": "obany",
+    "contrasena": "$2b$12$RGXooZ5MAV3TTQFm2GKeauCnXZjIMAuSXHZ1zSQkxFDq/l5BCxqbm",
+    "nombre": "Obany Bernal",
+    "rol": "admin",
+    "requiereCambio": false
+  },
+  {
+    "usuario": "CCortez",
+    "contrasena": "$2b$12$le5fsIzldgmn.YyAcNJxk.pS2VcqyKaOYZMVzPZBRPLX4ol0saCsy",
+    "nombre": "Carlos Cortez",
+    "rol": "asesor",
+    "requiereCambio": true
+  },
+  {
+    "usuario": "CCortez",
+    "contrasena": "$2b$12$InZ0IdTK8nAscz4HN8jq5OmN/AicgcWY2zaxAQtQEHwKUPMgDexhi",
+    "nombre": "Carlos Cortez",
+    "rol": "asesor",
+    "requiereCambio": true
+  },
+  {
+    "usuario": "ORosa",
+    "contrasena": "$2b$10$.3HlUuCwCBAvCYxK6G9JZONu4b9kibR04KjfW0u8QXRAkDSWO0laG",
+    "nombre": "Oscar Rosa",
+    "rol": "asesor",
+    "requiereCambio": true
+  },
+  {
+    "usuario": "RMartinez",
+    "contrasena": "$2b$12$leHT2hyKs4ier3jc9DJoPOS/eORsawflkxbWqO3vs1tZuHHEsesGm",
+    "nombre": "Rosibel Martínez",
+    "rol": "asesora",
+    "requiereCambio": true
+  },
+  {
+    "usuario": "ESanchez",
+    "contrasena": "$2b$12$2CrpObkWIw8xUXcm32kgKudu.H4HS51Xs9igrHPpRncockxYZ4Oxu",
+    "nombre": "Edgar Sánchez",
+    "rol": "asesor",
+    "requiereCambio": true
+  },
+  {
+    "usuario": "LOrellana",
+    "contrasena": "$2b$12$1kjSVJX.NcN5UfX/maRSDe9BCnYZXMrnI4XiEUkHh1sIjq4stqfuq",
+    "nombre": "Loúrdes Orellana",
+    "rol": "asesora",
+    "requiereCambio": true
+  },
+  {
+    "usuario": "MArgueta",
+    "contrasena": "$2b$12$.vpQHvrpmuRVcOEzEcv/a.6prMt4rRhKk61IhCPT3ZA9.7WodNrm2",
+    "nombre": "Maritza Argueta",
+    "rol": "asesora",
+    "requiereCambio": true
+  },
+  {
+    "usuario": "PGarcia",
+    "contrasena": "$2b$12$SyaM1lVh.EXJcvN1VtiBmufw80dZowR1jEyA7.ceNxiLtyKqcenD6",
+    "nombre": "Paty García",
+    "rol": "asesor",
+    "requiereCambio": true
+  }
+]

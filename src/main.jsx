@@ -6,6 +6,8 @@ import App from "./App.jsx";
 import EditorEsquela from "./components/EditorEsquela.jsx";
 import VistaCompletaEsquela from "./components/VistaCompletaEsquela";
 import "./index.css";
+import CambiarPassword from './components/CambiarPassword';
+
 
 console.log("🌟 React App cargada correctamente");
 
@@ -16,6 +18,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/" element={<Navigate to="/login" replace />} />
         <Route path="/login" element={<App />} />
         <Route path="/editor" element={<EditorEsquela />} />
+        <Route path="/cambiar-password" element={<CambiarPassword />} />
         <Route
           path="/vista"
           element={
