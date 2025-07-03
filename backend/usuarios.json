@@ -4,7 +4,7 @@
     "contrasena": "$2b$12$RGXooZ5MAV3TTQFm2GKeauCnXZjIMAuSXHZ1zSQkxFDq/l5BCxqbm",
     "nombre": "Obany Bernal",
     "rol": "admin",
-    "requiereCambio": false
+    "requiereCambio": true
   },
   {
     "usuario": "CCortez",

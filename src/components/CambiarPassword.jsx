@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import '../css/Cambiar-password.css'
 
 function CambiarPassword() {
   const navigate = useNavigate();
@@ -58,7 +59,7 @@ function CambiarPassword() {
           <input type="password" value={nueva} onChange={(e) => setNueva(e.target.value)} required />
           <label>Confirmar Contraseña</label>
           <input type="password" value={confirmar} onChange={(e) => setConfirmar(e.target.value)} required />
-          <button type="submit">Guardar y continuar</button>
+          <button type="submit" className="btn-CambiarPassword">Guardar y continuar</button>
         </form>
       </div>
     </div>
