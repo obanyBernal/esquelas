@@ -256,7 +256,7 @@ function EditorFormulario({ formData, setFormData }) {
           window.open("https://selector-esquelas.vercel.app/", "_blank")
         }
         
-      >Selector de Esquelas</button>
+      >Selector de Fondos</button>
       <h2 className="herramientas-title">
         Herramientas de Inteligencia Artificial
       </h2>
