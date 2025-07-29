@@ -151,10 +151,9 @@ select:valid {
 .controlador {
   display: flex;
   flex-direction: column;
-  scale: 80%;
+  scale: 100%;
   align-self: flex-start;
 }
-
 
 .btn-guardar {
   margin-top: 1.5rem;
@@ -286,16 +285,20 @@ select:valid {
   flex-wrap: wrap; /* Se adapta en pantallas pequeñas */
 }
 
-.btn-selector-esquelas{
-  margin-top: 1.5rem;
-  padding: 0.8rem 2rem;
-  margin-right: 1.5rem;
+.btn-selector-esquelas {
+  margin-top: 1.0rem;
+  padding: 0.5rem 1rem;
+  margin-right: 1.0rem;
+  margin-bottom: 1rem;
+  width: 80%;
+  height: 3rem;
   background-color: #0b558e;
   color: #cdd6e0;
   border: none;
   border-radius: 30px;
   cursor: pointer;
   font-weight: bold;
+  font-size: small;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
@@ -310,5 +313,13 @@ select:valid {
 .btn-selector-esquelas:active {
   background-color: #0b558e;
   transform: scale(0.95);
+}
+
+.foto-carga-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
 }
 

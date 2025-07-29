@@ -200,19 +200,7 @@ function VistaCompletaEsquela({ formData }) {
         </div>
       </div>
 
-      <button
-        onClick={handleDescargar}
-        style={{
-          marginTop: "2rem",
-          backgroundColor: "#0b558e",
-          color: "white",
-          padding: "10px 25px",
-          borderRadius: "8px",
-          fontWeight: "bold",
-          border: "none",
-          cursor: "pointer",
-        }}
-      >
+      <button onClick={handleDescargar} className="boton-descargar-flotante">
         Descargar PNG
       </button>
     </div>

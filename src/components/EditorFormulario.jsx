@@ -32,9 +32,8 @@ const pensamientosArray = [
   "Gracias por darnos tanto amor en tan poco tiempo. Tu luz es eterna, y tu recuerdo, nuestro mayor tesoro.",
   "Te fuiste sin avisar, dejando un silencio que duele… pero también un amor que jamás se irá.",
   "Fuiste un regalo de amor que la vida nos dio por un momento, y que el cielo abrazó para siempre.",
-  "Tu luz fue breve, pero iluminó nuestras almas para siempre. Gracias por habernos elegido."
+  "Tu luz fue breve, pero iluminó nuestras almas para siempre. Gracias por habernos elegido.",
 ];
-
 
 const fondosArray = [
   { id: 1, nombre: "Fondo 1", imagen: "fondo1.png" },
@@ -53,8 +52,8 @@ const fondosArray = [
   { id: 13, nombre: "Fondo 13", imagen: "fondo13.png" },
   { id: 14, nombre: "Fondo 14", imagen: "fondo14.png" },
   { id: 15, nombre: "Fondo 15", imagen: "fondo15.png" },
-  { id: 16, nombre: "Fondo 16", imagen: "fondo16.png"},
-  { id: 17, nombre: "Fondo 17", imagen: "fondo17.png"},
+  { id: 16, nombre: "Fondo 16", imagen: "fondo16.png" },
+  { id: 17, nombre: "Fondo 17", imagen: "fondo17.png" },
   { id: 18, nombre: "Fondo 18", imagen: "fondo18.png" },
   { id: 19, nombre: "Fondo 19", imagen: "fondo19.png" },
   { id: 20, nombre: "Fondo 20", imagen: "fondo20.png" },
@@ -119,6 +118,39 @@ function EditorFormulario({ formData, setFormData }) {
           }
         />
       </div>
+      <div className="foto-carga-wrapper">
+        <label
+          htmlFor="file-upload"
+          className={`btn-cargarFoto ${
+            formData.foto ? "btn-cargarFoto-cargada" : ""
+          }`}
+        >
+          {formData.foto ? "Foto Cargada" : "Cargar Foto"}
+        </label>
+        <span className="nombre-archivo">
+          {formData.foto ? "Foto seleccionada" : "Sin archivos seleccionados"}
+        </span>
+      </div>
+
+      <input
+        id="file-upload"
+        type="file"
+        accept="image/*"
+        style={{ display: "none" }}
+        onChange={(e) => {
+          const file = e.target.files[0];
+          if (file) {
+            const reader = new FileReader();
+            reader.onloadend = () => {
+              setFormData((prev) => ({
+                ...prev,
+                foto: reader.result,
+              }));
+            };
+            reader.readAsDataURL(file);
+          }
+        }}
+      />
 
       <label>Datos del difunto</label>
       <textarea
@@ -143,24 +175,6 @@ function EditorFormulario({ formData, setFormData }) {
             }
           />
         </div>
-
-        <div className="controlador">
-          <label htmlFor="tamanoPensamiento">Tamaño del pensamiento:</label>
-          <input
-            id="tamanoPensamiento"
-            type="range"
-            min="12"
-            max="36"
-            step="1"
-            value={formData.tamanoPensamiento || 18}
-            onChange={(e) =>
-              setFormData((prev) => ({
-                ...prev,
-                tamanoPensamiento: e.target.value,
-              }))
-            }
-          />
-        </div>
       </div>
 
       <div className="campo-flex">
@@ -172,39 +186,16 @@ function EditorFormulario({ formData, setFormData }) {
             </option>
           ))}
         </select>
-
-        <label
-          htmlFor="file-upload"
-          className={`btn-cargarFoto ${
-            formData.foto ? "btn-cargarFoto-cargada" : ""
-          }`}
+        <button
+          className="btn-selector-esquelas"
+          type="button"
+          onClick={() =>
+            window.open("https://selector-esquelas.vercel.app/", "_blank")
+          }
         >
-          {formData.foto ? "Foto Cargada" : "Cargar Foto"}
-        </label>
-        <input
-          id="file-upload"
-          type="file"
-          accept="image/*"
-          style={{ display: "none" }}
-          onChange={(e) => {
-            const file = e.target.files[0];
-            if (file) {
-              const reader = new FileReader();
-              reader.onloadend = () => {
-                setFormData((prev) => ({
-                  ...prev,
-                  foto: reader.result,
-                }));
-              };
-              reader.readAsDataURL(file);
-            }
-          }}
-        />
-        <span className="nombre-archivo">
-          {formData.foto ? "Foto seleccionada" : "Sin archivos seleccionados"}
-        </span>
+          Selector de Fondos
+        </button>
       </div>
-
       <select
         name="pensamiento"
         value={formData.pensamiento}
@@ -217,6 +208,23 @@ function EditorFormulario({ formData, setFormData }) {
           </option>
         ))}
       </select>
+      <div className="controlador">
+        <label htmlFor="tamanoPensamiento">Tamaño del pensamiento:</label>
+        <input
+          id="tamanoPensamiento"
+          type="range"
+          min="12"
+          max="36"
+          step="1"
+          value={formData.tamanoPensamiento || 18}
+          onChange={(e) =>
+            setFormData((prev) => ({
+              ...prev,
+              tamanoPensamiento: e.target.value,
+            }))
+          }
+        />
+      </div>
       <div className="botones-esquela">
         <button
           className="btn-guardar"
@@ -228,35 +236,7 @@ function EditorFormulario({ formData, setFormData }) {
         >
           Vista Previa
         </button>
-
-        <button
-          className="btn-guardar"
-          type="button"
-          onClick={() => {
-            setFormData({
-              nombre: "",
-              datos: "",
-              pensamiento: "",
-              fondo: "",
-              foto: "",
-              tamanoDatos: 24,
-              tamanoPensamiento: 18,
-              tamanoNombre: 32,
-            });
-            localStorage.removeItem("formDataEsquela");
-          }}
-        >
-          Nueva Esquela
-        </button>
       </div>
-      <button
-        className="btn-selector-esquelas"
-        type="button"
-        onClick={() =>
-          window.open("https://selector-esquelas.vercel.app/", "_blank")
-        }
-        
-      >Selector de Fondos</button>
       <h2 className="herramientas-title">
         Herramientas de Inteligencia Artificial
       </h2>
