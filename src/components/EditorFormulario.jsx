@@ -7,7 +7,7 @@ import generar from "../assets/generar.svg";
 
 const pensamientosArray = [
   "El cielo se iluminó por la llegada de este hermoso Ángel, siempre guardaremos los mejores recuerdos…. Te extrañaremos.",
-  "Cuando la vida te separa de un ser querido el recuerdo de su sonrisa es la mejor manera de seguir adelante. ",
+  "Cuando la vida te separa de un ser querido el recuerdo de su sonrisa es la mejor manera de seguir adelante.",
   "Para los que amé y para los que me amaron: Que su tristeza se convierta, en confianza y fe Es solo por un momento que vamos a estar separados. Así que bendigan los recuerdos de su corazón.",
   "Como los rayos del sol iluminan el mundo entero, tus recuerdos, iluminaran nuestros corazones y nuestra mente por el resto de nuestros días.",
   "Tu ausencia ha dejado un inmenso vacío, pero para los que te amamos, no dejaras de existir jamás.",
@@ -16,7 +16,25 @@ const pensamientosArray = [
   "Aunque pase por quebradas oscuras, no temo ningún mal, porque tú estás conmigo con tu vara y tu bastón, y al verlas voy sin miedo. Salmos 23: 4",
   "Le dijo Jesús: Yo soy la resurrección y la vida; el que cree en mí, aunque esté muerto, vivirá. Y todo aquel que vive y cree en mí, no morirá eternamente. ¿Crees esto? Juan 11:25-26",
   "Si el hombre muere, ¿Puede volver a vivir? Esperare todos los días de mi servicio obligatorio hasta que llegue mi liberación. Tú llamarás y yo responderé. Ansiarás volver a ver la obra de tus manos. Job 14:14-15",
+
+  // Nuevas frases del documento
+  "Así que no temas, porque yo estoy contigo; no te angusties, porque yo soy tu Dios. Te fortaleceré y te ayudaré; te sostendré con mi diestra victoriosa. Isaías 41:10",
+  "Aunque pase por el valle de sombra de muerte, no temeré mal alguno, porque tú estás conmigo: tu vara y tu cayado me infunden aliento. Salmos 23:4",
+  "Dios es nuestro amparo y nuestra fortaleza, nuestra ayuda segura en momentos de angustia. Salmo 46:1",
+  "He peleado la buena batalla, he terminado la carrera, he guardado la fe, ahora me toca recibir la corona merecida que Dios que es justo me dará. 2ª Timoteo 4:7",
+  "Porque para mí el vivir es Cristo y el morir es ganancia. Filipenses 1:21",
+  "Así también ustedes ahora sienten tristeza, pero yo los volveré a ver y su corazón se llenará de alegría, y nadie les podrá arrebatar ese gozo. Juan 16:22",
+  "Este es nuestro Dios, ahora y para siempre. El Dios nuestro nos guiara más allá de la muerte. Salmo 48:14",
+  "En cada pensamiento y en cada silencio, tu recuerdo vive con nosotros siempre.",
+  "Nos queda tu risa, tus abrazos y todo lo que fuiste… porque aunque te hayas ido, sigues siendo parte de nosotros.",
+  "Tu partida deja un vacío inmenso, pero tu amor y recuerdos vivirán por siempre en nuestros corazones.",
+  "Dejas un legado de amor y fortaleza que nunca olvidaremos.",
+  "Gracias por darnos tanto amor en tan poco tiempo. Tu luz es eterna, y tu recuerdo, nuestro mayor tesoro.",
+  "Te fuiste sin avisar, dejando un silencio que duele… pero también un amor que jamás se irá.",
+  "Fuiste un regalo de amor que la vida nos dio por un momento, y que el cielo abrazó para siempre.",
+  "Tu luz fue breve, pero iluminó nuestras almas para siempre. Gracias por habernos elegido."
 ];
+
 
 const fondosArray = [
   { id: 1, nombre: "Fondo 1", imagen: "fondo1.png" },
@@ -35,6 +53,28 @@ const fondosArray = [
   { id: 13, nombre: "Fondo 13", imagen: "fondo13.png" },
   { id: 14, nombre: "Fondo 14", imagen: "fondo14.png" },
   { id: 15, nombre: "Fondo 15", imagen: "fondo15.png" },
+  { id: 16, nombre: "Fondo 16", imagen: "fondo16.png"},
+  { id: 17, nombre: "Fondo 17", imagen: "fondo17.png"},
+  { id: 18, nombre: "Fondo 18", imagen: "fondo18.png" },
+  { id: 19, nombre: "Fondo 19", imagen: "fondo19.png" },
+  { id: 20, nombre: "Fondo 20", imagen: "fondo20.png" },
+  { id: 21, nombre: "Fondo 21", imagen: "fondo21.png" },
+  { id: 22, nombre: "Fondo 22", imagen: "fondo22.png" },
+  { id: 23, nombre: "Fondo 23", imagen: "fondo23.png" },
+  { id: 24, nombre: "Fondo 24", imagen: "fondo24.png" },
+  { id: 25, nombre: "Fondo 25", imagen: "fondo25.png" },
+  { id: 26, nombre: "Fondo 26", imagen: "fondo26.png" },
+  { id: 27, nombre: "Fondo 27", imagen: "fondo27.png" },
+  { id: 28, nombre: "Fondo 28", imagen: "fondo28.png" },
+  { id: 29, nombre: "Fondo 29", imagen: "fondo29.png" },
+  { id: 30, nombre: "Fondo 30", imagen: "fondo30.png" },
+  { id: 31, nombre: "Fondo 31", imagen: "fondo31.png" },
+  { id: 32, nombre: "Fondo 32", imagen: "fondo32.png" },
+  { id: 33, nombre: "Fondo 33", imagen: "fondo33.png" },
+  { id: 34, nombre: "Fondo 34", imagen: "fondo34.png" },
+  { id: 35, nombre: "Fondo 35", imagen: "fondo35.png" },
+  { id: 36, nombre: "Fondo 36", imagen: "fondo36.png" },
+  { id: 37, nombre: "Fondo 37", imagen: "fondo37.png" },
 ];
 
 function EditorFormulario({ formData, setFormData }) {
@@ -51,6 +91,7 @@ function EditorFormulario({ formData, setFormData }) {
       <img src={logo} alt="Logo" className="form-logo" />
 
       <h2 className="form-title">Editor de Esquelas</h2>
+      <h3>Versión 1.2</h3>
 
       <label>Nombre del difunto</label>
       <input
@@ -176,7 +217,7 @@ function EditorFormulario({ formData, setFormData }) {
           </option>
         ))}
       </select>
-            <div className="botones-esquela">
+      <div className="botones-esquela">
         <button
           className="btn-guardar"
           type="button"
@@ -208,6 +249,14 @@ function EditorFormulario({ formData, setFormData }) {
           Nueva Esquela
         </button>
       </div>
+      <button
+        className="btn-selector-esquelas"
+        type="button"
+        onClick={() =>
+          window.open("https://selector-esquelas.vercel.app/", "_blank")
+        }
+        
+      >Selector de Esquelas</button>
       <h2 className="herramientas-title">
         Herramientas de Inteligencia Artificial
       </h2>
@@ -216,10 +265,7 @@ function EditorFormulario({ formData, setFormData }) {
           className="btn-guardar btn-con-icono"
           type="button"
           onClick={() =>
-            window.open(
-              "https://www.iloveimg.com/es/recortar-imagen",
-              "_blank"
-            )
+            window.open("https://www.iloveimg.com/es/recortar-imagen", "_blank")
           }
         >
           <img src={recortar} alt="Recortar" className="icono-recortar-svg" />
