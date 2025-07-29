@@ -36,7 +36,7 @@ const pensamientosArray = [
 ];
 
 const fondosArray = [
-  { id: 1, nombre: "Fondo 1", imagen: "fondo1.png" },
+{ id: 1, nombre: "Fondo 1", imagen: "fondo1.png" },
   { id: 2, nombre: "Fondo 2", imagen: "fondo2.png" },
   { id: 3, nombre: "Fondo 3", imagen: "fondo3.png" },
   { id: 4, nombre: "Fondo 4", imagen: "fondo4.png" },
@@ -47,8 +47,7 @@ const fondosArray = [
   { id: 9, nombre: "Fondo 9", imagen: "fondo9.png" },
   { id: 10, nombre: "Fondo 10", imagen: "fondo10.png" },
   { id: 11, nombre: "Fondo 11", imagen: "fondo11.png" },
-  { id: 121, nombre: "Fondo 12 rosa", imagen: "fondo12a.png" },
-  { id: 122, nombre: "Fondo 12 azul", imagen: "fondo12b.png" },
+  { id: 12, nombre: "Fondo 12", imagen: "fondo12.png" },
   { id: 13, nombre: "Fondo 13", imagen: "fondo13.png" },
   { id: 14, nombre: "Fondo 14", imagen: "fondo14.png" },
   { id: 15, nombre: "Fondo 15", imagen: "fondo15.png" },
@@ -74,6 +73,7 @@ const fondosArray = [
   { id: 35, nombre: "Fondo 35", imagen: "fondo35.png" },
   { id: 36, nombre: "Fondo 36", imagen: "fondo36.png" },
   { id: 37, nombre: "Fondo 37", imagen: "fondo37.png" },
+  { id: 38, nombre: "Fondo 38", imagen: "fondo38.png" }
 ];
 
 function EditorFormulario({ formData, setFormData }) {
